@@ -13,6 +13,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
+
+#vashisht's part
 def example(request):
     var=team.objects.all()
 
