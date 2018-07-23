@@ -23,4 +23,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^teams/',include('teams.urls')),
+    url(r'^users/',include('teams.urls')),
 ]
