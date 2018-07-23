@@ -13,14 +13,9 @@ status_choices = [
 
 ]
 # Create your models here.
-#vashisht's models
-class team(models.Model):
-    team_name=models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.team_name
 
-#neeraj's models
+
 class CsrfExemptSessionAuthentication(SessionAuthentication):
 
     def enforce_csrf(self, request):
@@ -30,6 +25,13 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
 class GameQuerySet(models.QuerySet):
     def is_present(self,user):
         return self.filter(Q(name=user))
+
+
+class team(models.Model):
+    team_name=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.team_name
 
 
 
