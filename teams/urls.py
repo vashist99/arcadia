@@ -1,5 +1,7 @@
 from django.conf.urls import url
-from . import views
-urlpatterns=[
-url(r'^$',views.example)
+from .views import register, checkusername,example
+urlpatterns = [
+    url(r'^$', example,name='example'),
+    url(r'register/$', register, name = 'register'),
+    url(r'checkusername/$', checkusername, name = 'checkusername')
 ]
