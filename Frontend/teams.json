@@ -3,25 +3,7 @@
 		{
 			"name" : "Synergy",
 			"leader" : "Jay Mistry",
-			"members" : [
-				{
-					"name" : "Jay Mistry",
-					"tag" : "RossoSkull"
-				}, {
-					"name" : "Lorem Ipsum",
-					"tag" : "Olor Sit"
-				}, {
-					"name" : "Amet Addae",
-					"tag" : "RASd dase"
-				}, {
-					"name" : "Afdfdsfa adfdf ",
-					"tag" : "asdfeef s"
-				}, {
-					"name" : "dfa dfews",
-					"tag" : "asfdfe asfde"
-				}
-			]
-		}, {
+"leader" : "Jay Mistry"		}, {
 			"name" : "Synergy",
 			"leader" : "Jay Mistry",
 			"members" : [
