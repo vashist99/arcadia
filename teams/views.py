@@ -40,46 +40,20 @@ def checkusername(request):
         return True
 
 
-
 @csrf_exempt
-def team_register(request):
-    datt = json.loads(request.body)
-    s = team_dataSerialiser(data = request.data)
-    dataa = datt['teams']
-    for data in dataa:
-        a = data['name']
-        b = data['leader']
-        c = data['members']
-        c0 = c[0]['name']
-        d0 = c[0]['tag']
-        c1 = c[1]['name']
-        d1 = c[1]['tag']
-        c2 = c[2]['name']
-        d2 = c[2]['tag']
-        c3 = c[3]['name']
-        d3 = c[3]['tag']
-        c4 = c[4]['name']
-        d4 = c[4]['tag']
-        rec = team_data(
-                team_name = a, leader = b,
-                member = c0, membertag = d0,
-                member5=c1, member5tag = d1,
-                member2=c2, member2tag=d2,
-                member3=c3, member3tag=d4,
-                member4=c4, member4tag=d3,
-
-
-                     )
-        rec.save()
-        return Response(s.data, status=status.HTTP_201_CREATED)
-
-
 class teams(APIView):
     def get(self, request):
         teams = team_data.objects.all()
         serializer = team_dataSerialiser(teams, many = True)
         return Response(serializer.data)
 
+
+    def post(self,request):
+        serializer = team_dataSerialiser(data=request.data)
+        if serializer.is_valid():
+           serializer.save()
+           return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
