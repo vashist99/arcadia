@@ -14,11 +14,11 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
-#vashisht's part
+#vashisht's views
 def example(request):
     var=team.objects.all()
 
-
+#neeraj's views
 def user_register(request):
     try:
         data = json.loads(request.body)
