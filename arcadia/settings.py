@@ -54,7 +54,7 @@ ROOT_URLCONF = 'arcadia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Frontend'],
+        'DIRS': ['arcadia/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
