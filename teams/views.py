@@ -1,4 +1,3 @@
-
 from django.shortcuts import render,get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -9,13 +8,24 @@ import json
 from django.http import JsonResponse
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
+from .forms import user
+
 
 
 
 # Create your views here.
+def view_teams(request):
+    response = HttpResponse(json_data, content_type='application/json')
+    response['Content-Disposition'] = 'attachment; filename="teams.json"'
 
-def example(request):
-    var=team.objects.all()
+def user_reg(request):
+    if request.method=='POST':
+        obj=user(request.POST)
+        with open("users.json","w") as write_file:
+            json.dump(obj)
+    else:
+        obj=user()
+        return render(request,'arcadia/index.html',{'forms':obj})
 
 
 class user_register(APIView):
@@ -49,9 +59,3 @@ class teams(APIView):
            serializer.save()
            return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(request.data, status=status.HTTP_400_BAD_REQUEST)
-
-
-
-
-
-

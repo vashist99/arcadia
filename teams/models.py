@@ -55,8 +55,9 @@ class team_data(models.Model):
     member4tag = models.CharField(max_length=100)
     member5 = models.CharField(max_length=100)
     member5tag = models.CharField(max_length=100)
+    games_played=models.IntegerField()
+    games_won=models.IntegerField()
 
 
     def __str__(self):
         return self.team_name
-
