@@ -63,17 +63,16 @@
 												<hr>
 												<div class="input-field">
 													<input type="text" name="name" ref="userName" placeholder="Your Name" class="input" @blur="verifyUserName()" id="userName">
-													<label for="regName">{{ regNameError }}</label>
+													<label for="regName">{% verbatim %} {{ regNameError }} {% endverbatim %}</label>
 												</div>
 												<div class="input-field">
 													<input type="text" id="regGamerTag" ref="regGamerTagRef" @blur="verifyGamerTag()" placeholder="Your Gamer Tag" class="input">
-													<label for="regGamerTag" >{{ regGamerTagError }}</label>
+													<label for="regGamerTag" >{% verbatim %} {{ regGamerTagError }} {% endverbatim %}</label>
 												</div>
 
 											</form>
-										<button v-show="!regUserWaiting" @click.prevent="regUserWaiting = ! regUserWaiting" class="waves-effect waves-light btn green">Submit</button> 
-										<button class="btn red waves-effect waves-light modal-close">Close</button>
-
+										<button v-show="!regUserWaiting" @click.prevent="regFormSubmit" class="waves-effect waves-light btn green">Submit</button> 
+										
 										<!-- Waiting Icon -->
 										<div class="preloader-wrapper small active" v-show="regUserWaiting">
 										    <div class="spinner-layer spinner-green-only">
@@ -86,6 +85,8 @@
 										      </div>
 										    </div>
 										  </div>
+
+										  <button class="btn red waves-effect waves-light modal-close">Close</button>
 
 									</div>
 								</div>
@@ -113,8 +114,8 @@
 						<div class="col s12 m6" v-for="team in teams">
 					        <div class="card red darken-4">
 					         <div class="card-content white-text">
-					            <span class="card-title">{{ team.name }}</span>
-					            <p class="leader-dec">Team Leader : {{ team.leader }}</p>
+					            <span class="card-title">{% verbatim %} {{ team.name }} {% endverbatim %}</span>
+					            <p class="leader-dec">Team Leader : {% verbatim %} {{ team.leader }} {% endverbatim %}</p>
 					            <table class="centered responsive-table highlight">
 					            	<thead>
 					            		<tr>
@@ -125,8 +126,8 @@
 
 					            	<tbody>
 					            		<tr v-for="member in team.members">
-					            			<td>{{ member.name }}</td>
-					            			<td>{{ member.tag }}</td>
+					            			<td>{% verbatim %} {{ member.name }} {% endverbatim %}</td>
+					            			<td>{% verbatim %} {{ member.tag }} {% endverbatim %}</td>
 					            		</tr>
 					            	</tbody>
 					            </table>

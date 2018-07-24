@@ -6,7 +6,7 @@ from rest_framework import status
 from .serialisers import team_dataSerialiser, user_recordSerialiser
 from .models import user_record, team_data, team
 import json
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 
