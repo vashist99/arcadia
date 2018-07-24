@@ -15,8 +15,10 @@ from .forms import user
 
 # Create your views here.
 def view_teams(request):
-    response = HttpResponse(json_data, content_type='application/json')
-    response['Content-Disposition'] = 'attachment; filename="teams.json"'
+    with open("Frontend/teams.json","r") as read_file:
+        json_data=json.load(read_file)
+    return  HttpResponse(json_data, content_type='application/json')
+    #response['Content-Disposition'] = 'attachment; filename="teams.json"'
 
 def user_reg(request):
     if request.method=='POST':
