@@ -58,7 +58,7 @@ var Main = new Vue({
 				this.regGamerTagError = "Enter a Gamer Tag";
 			} else {
 				// Fetch the username: 
-				fetch('http://localhost:3000/users/checkgamertag?tag=' + gtag.value)
+				fetch('/users/checkusername' + gtag.value)
 				.then(function(response) {
 					response.json().then(function(data) {
 						console.log(data);
@@ -118,11 +118,11 @@ var Main = new Vue({
 
 // Gets all the teams from the server
 var getTeams = function () {
-	fetch("teams.json", {
+	fetch("/teams/showteams/", {
 		mode: 'no-cors'
 	}).then(function(res) {
 		res.json().then(function(data) {
-			Main.teams = data.teams;
+			Main.teams = data;
 		});
 	}).catch(function(err) {
 		console.log(err);

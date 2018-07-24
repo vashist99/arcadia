@@ -149,7 +149,7 @@
 						<div class="col s12 m6" v-for="team in teams">
 					        <div class="card red darken-4">
 					         <div class="card-content white-text">
-					            <span class="card-title">{% verbatim %}{{ team.name }}{% endverbatim %}</span>
+					            <span class="card-title">{% verbatim %}{{ team.team_name }}{% endverbatim %}</span>
 					            <p class="leader-dec">Team Leader : {% verbatim %}{{ team.leader }}{% endverbatim %}</p>
 					            <table class="centered highlight">
 					            	<thead>
@@ -160,9 +160,25 @@
 					            	</thead>
 
 					            	<tbody>
-					            		<tr v-for="member in team.members">
-					            			<td>{% verbatim %}{{ member.name }}{% endverbatim %}</td>
-					            			<td>{% verbatim %}{{ member.tag }}{% endverbatim %}</td>
+					            		<tr>
+					            			<td>{% verbatim %}{{ team.member }}{% endverbatim %}</td>
+					            			<td>{% verbatim %}{{ team.membertag }}{% endverbatim %}</td>
+													</tr>
+													<tr>
+					            			<td>{% verbatim %}{{ team.member2 }}{% endverbatim %}</td>
+					            			<td>{% verbatim %}{{ team.member2tag }}{% endverbatim %}</td>
+													</tr>
+													<tr>
+					            			<td>{% verbatim %}{{ team.member3 }}{% endverbatim %}</td>
+					            			<td>{% verbatim %}{{ team.member3tag }}{% endverbatim %}</td>
+													</tr>
+													<tr>
+					            			<td>{% verbatim %}{{ team.member4 }}{% endverbatim %}</td>
+					            			<td>{% verbatim %}{{ team.member4tag }}{% endverbatim %}</td>
+													</tr>
+													<tr>
+					            			<td>{% verbatim %}{{ team.member5 }}{% endverbatim %}</td>
+					            			<td>{% verbatim %}{{ team.member5tag }}{% endverbatim %}</td>
 					            		</tr>
 					            	</tbody>
 					            </table>
