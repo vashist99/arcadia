@@ -1,9 +1,10 @@
+{%load static from staticfiles%}
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Arcadia Site</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<!-- Change to Vue JS Production CDN link -->
@@ -29,7 +30,7 @@
 						</div>
 					</div>
 				</div>
-			</nav>	
+			</nav>
 
 		</header>
 
@@ -47,7 +48,7 @@
 									<h2 class="white-text">Arcadia Brings You A Gaming Competition...</h2>
 									<p class="white-text">Don't miss this chance, lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. lorem ipsum dolor sit amet. </p>
 								</div>
-								<button class="modal-trigger z-depth-1 btn l green waves-effect waves-light" href="#regUserModal">Register Now!</button> <button class="modal-trigger z-depth-1 btn l green waves-effect waves-light" href="#regTeamModal">Register A Team!</button> 
+								<button class="modal-trigger z-depth-1 btn l green waves-effect waves-light" href="#regUserModal">Register Now!</button> <button class="modal-trigger z-depth-1 btn l green waves-effect waves-light" href="#regTeamModal">Register A Team!</button>
 								<!-- Register User Modal -->
 								<div id="regUserModal" class="modal">
 									<div class="modal-content">
@@ -56,7 +57,7 @@
 										<blockquote>The registration fee is Rs. 20.</blockquote>
 										<p><i>For the payment, contact someone</i></p>
 										<hr />
-										
+
 											<form>
 												<h4>Register</h4>
 												<hr>
@@ -70,7 +71,7 @@
 												</div>
 
 											</form>
-										<button v-show="!regUserWaiting" @click.prevent="regUserWaiting = ! regUserWaiting" class="waves-effect waves-light btn green">Submit</button> 
+										<button v-show="!regUserWaiting" @click.prevent="regUserWaiting = ! regUserWaiting" class="waves-effect waves-light btn green">Submit</button>
 										<button class="btn red waves-effect waves-light modal-close">Close</button>
 
 										<!-- Waiting Icon -->
@@ -150,7 +151,7 @@
 
 
 		<!-- Footer of the page -->
-		
+
 		<footer class="page-footer red darken-3">
 		  <div class="container">
 			<div class="row">
