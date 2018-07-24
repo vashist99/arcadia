@@ -1,0 +1,27 @@
+for users/showteams/ and users/team_register:
+
+{
+        "id": 1,
+        "team_name": "sjandf",
+        "leader": "k;jdsnfk;",
+        "member": ";kfjsndfkjmn",
+        "membertag": "kjfdsnfkjmn",
+        "member2": "jfsdnfkjbn",
+        "member2tag": "jkfnsdkjfn",
+        "member3": "kjfnsdkjfnkqjfdsbb",
+        "member3tag": "kjsdnfkjns",
+        "member4": "fnsjkdn",
+        "member4tag": "klsjdnfkjsn",
+        "member5": "sfkjjnfdkj",
+        "member5tag": "nkjdsnfkjsn"
+}
+
+for users/checkusername:
+
+{
+
+	"tag": "tagname"
+
+
+}
+

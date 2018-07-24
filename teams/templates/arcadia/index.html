@@ -56,6 +56,7 @@
 										<p>Please enter your details below. You will be auctioned on 18-08-2018.</p>
 										<blockquote>The registration fee is Rs. 20.</blockquote>
 										<p><i>For the payment, contact someone</i></p>
+<<<<<<< HEAD
 										<hr/>
 										<form  method="post" enctype="multipart/form-data">
 												{%csrf_token%}
@@ -66,6 +67,44 @@
 
                      </form>
 										 	<button class="btn red waves-effect waves-light modal-close">Close</button>
+||||||| merged common ancestors
+										<hr />
+										
+											<form>
+												<h4>Register</h4>
+												<hr>
+												<div class="input-field">
+													<input type="text" name="name" ref="userName" placeholder="Your Name" class="input" @blur="verifyUserName()" id="userName">
+													<label for="regName">{{ regNameError }}</label>
+												</div>
+												<div class="input-field">
+													<input type="text" id="regGamerTag" ref="regGamerTagRef" @blur="verifyGamerTag()" placeholder="Your Gamer Tag" class="input">
+													<label for="regGamerTag" >{{ regGamerTagError }}</label>
+												</div>
+
+											</form>
+										<button v-show="!regUserWaiting" @click.prevent="regUserWaiting = ! regUserWaiting" class="waves-effect waves-light btn green">Submit</button> 
+										<button class="btn red waves-effect waves-light modal-close">Close</button>
+
+=======
+										<hr />
+										
+											<form>
+												<h4>Register</h4>
+												<hr>
+												<div class="input-field">
+													<input type="text" name="name" ref="userName" placeholder="Your Name" class="input" @blur="verifyUserName()" id="userName">
+													<label for="regName">{% verbatim %} {{ regNameError }} {% endverbatim %}</label>
+												</div>
+												<div class="input-field">
+													<input type="text" id="regGamerTag" ref="regGamerTagRef" @blur="verifyGamerTag()" placeholder="Your Gamer Tag" class="input">
+													<label for="regGamerTag" >{% verbatim %} {{ regGamerTagError }} {% endverbatim %}</label>
+												</div>
+
+											</form>
+										<button v-show="!regUserWaiting" @click.prevent="regFormSubmit" class="waves-effect waves-light btn green">Submit</button> 
+										
+>>>>>>> 4558f72227a6d2fd0318b315e1f7df77740300ab
 										<!-- Waiting Icon -->
 										<div class="preloader-wrapper small active" v-show="regUserWaiting">
 										    <div class="spinner-layer spinner-green-only">
@@ -78,6 +117,8 @@
 										      </div>
 										    </div>
 										  </div>
+
+										  <button class="btn red waves-effect waves-light modal-close">Close</button>
 
 									</div>
 								</div>
@@ -105,8 +146,8 @@
 						<div class="col s12 m6" v-for="team in teams">
 					        <div class="card red darken-4">
 					         <div class="card-content white-text">
-					            <span class="card-title">{{ team.name }}</span>
-					            <p class="leader-dec">Team Leader : {{ team.leader }}</p>
+					            <span class="card-title">{% verbatim %} {{ team.name }} {% endverbatim %}</span>
+					            <p class="leader-dec">Team Leader : {% verbatim %} {{ team.leader }} {% endverbatim %}</p>
 					            <table class="centered responsive-table highlight">
 					            	<thead>
 					            		<tr>
@@ -117,8 +158,8 @@
 
 					            	<tbody>
 					            		<tr v-for="member in team.members">
-					            			<td>{{ member.name }}</td>
-					            			<td>{{ member.tag }}</td>
+					            			<td>{% verbatim %} {{ member.name }} {% endverbatim %}</td>
+					            			<td>{% verbatim %} {{ member.tag }} {% endverbatim %}</td>
 					            		</tr>
 					            	</tbody>
 					            </table>

@@ -38,6 +38,7 @@ var Main = new Vue({
 				this.$refs.userName.attributes.class.value = "valid";
 				this.regNameError = "Nice!"
 			}
+			console.log(this.regNameError);
 		},
 
 		verifyGamerTag: function() {
@@ -65,6 +66,17 @@ var Main = new Vue({
 					});
 				});
 			}
+		},
+
+		regFormSubmit: function() {
+			console.log("Hello");
+			this.regUserWaiting = !this.regUserWaiting;
+			this.verifyUserName();
+			this.verifyGamerTag();
+			if ( this.regNameError == "Nice!" && this.regGamerTagError == "Good to go!") {
+				console.log("Can submit");
+			}
+			this.regUserWaiting = !this.regUserWaiting;
 		}
 	}
 });
@@ -72,10 +84,12 @@ var Main = new Vue({
 
 // Gets all the teams from the server
 var getTeams = function () {
-	fetch("teams.json", {
+	fetch("http://localhost:8000/teams/showteams/", {
 		mode: 'no-cors'
 	}).then(function(res) {
+		console.log(res);
 		res.json().then(function(data) {
+			
 			Main.teams = data.teams;
 		});
 	}).catch(function(err) {
