@@ -21,14 +21,9 @@ def view_teams(request):
     #response['Content-Disposition'] = 'attachment; filename="teams.json"'
 
 def user_reg(request):
-    if request.method=='POST':
-        obj=user(request.POST)
-        with open("users.json","w") as write_file:
-            json.dump(obj)
-    else:
-        obj=user()
-        return render(request,'arcadia/index.html',{'forms':obj})
-
+    var=request.GET
+    with open("Frontend/user.json","w") as write_file:
+        json.dump(var,write_file)
 
 class user_register(APIView):
     def post(self, request):

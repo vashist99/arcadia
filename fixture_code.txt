@@ -1,0 +1,47 @@
+from collections import defaultdict
+num=int(input())
+temp=1
+t=0
+arr=list()
+while temp<=num:
+    arr.append(temp)
+    t+=1
+    temp+=1
+
+i=0
+j=num-1
+v=0
+a=defaultdict(list)
+while(j>=i):
+    a[0].append(arr[i])
+    a[0].append(arr[j])
+    j-=1
+    i+=1
+
+def function(mylist,x,count):
+
+    if count==num-1:
+        return mylist[x]
+    else:
+        print('hola')
+        var1=mylist[x][len(mylist[x])-1]
+        d=mylist[x]
+        d.remove(d[len(mylist[x])-1])
+        if x%2==0:
+            var2=mylist[x][0]
+            d.remove(d[0])
+        else:
+            var2=mylist[x][1]
+            d.remove(d[1])
+
+        d.append(var1)
+        d.append(var2)
+        mylist[x+1]=d
+        x+=1
+        count+=1
+        function(mylist,x,count)
+
+print(function(a,0,1))
+
+
+        
